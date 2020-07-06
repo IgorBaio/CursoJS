@@ -1,6 +1,6 @@
 const randomNumber = (valorLimite) => {
 
-  return Math.random(valorLimite);
+  return Math.floor(Math.random(valorLimite) * valorLimite) + 1;
 }
 
-console.log(randomNumber(4));
+console.log(randomNumber(100));
