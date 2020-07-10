@@ -10,6 +10,10 @@ let secondPlayer;
 let player1 = 0;
 let player2 = 0;
 
+function sleep(ms) {
+   return new Promise(resolve => setTimeout( aiPlays(), ms));
+ }
+
 // adding the click event to the boxes
 for(let i = 0; i < boxes.length; i++){
    //when someone clicks on the box
@@ -26,8 +30,9 @@ for(let i = 0; i < boxes.length; i++){
       // compute move
       if(player1 == player2){
          player1++;
+         
          if(secondPlayer == 'ai-player'){
-            aiPlays();
+            sleep(3000);
             player2++;
          }
       } else{
